@@ -1,10 +1,8 @@
-package edu.inai.coursework3.services;
+package com.example.skills_camp.services;
 
-import edu.inai.coursework3.util.FileStorageImpl;
-import lombok.AllArgsConstructor;
+import com.example.skills_camp.util.FileStorageImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,14 +14,9 @@ import java.io.IOException;
 public class ImageService {
     private final FileStorageImpl fileStorage;
 
-    private String defaultAvatar="DEFAULT.png";
-
     @SneakyThrows
-    public String saveImage(MultipartFile image, String oldImageName){
+    public String saveImage(MultipartFile image){
         String imageStorageName=fileStorage.save(image.getInputStream(),image.getOriginalFilename());
-        if(!oldImageName.equals(defaultAvatar)){
-            deleteImage(oldImageName);
-        }
         return imageStorageName;
     }
 

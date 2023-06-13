@@ -1,4 +1,4 @@
-package edu.inai.coursework3.dto;
+package com.example.skills_camp.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,9 +11,10 @@ import org.springframework.web.multipart.MultipartFile;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProfileEditForm {
-    private String newUsername;
-    private String newAbout;
+    private String firstName;
+    private String lastName;
     private MultipartFile newAvatar;
     private String newPassword;
-    private String newPasswordRepeat;
+    private String telegram;
+    private String about;
 }

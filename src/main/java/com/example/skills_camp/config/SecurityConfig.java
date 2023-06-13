@@ -1,7 +1,6 @@
-package edu.inai.coursework3.config;
+package com.example.skills_camp.config;
 
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +13,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.sql.DataSource;
@@ -41,31 +39,37 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.formLogin()
                 .loginPage("/login")
                 .failureUrl("/login?error=true")
-                .defaultSuccessUrl("/");
+                .defaultSuccessUrl("/")
 
-        http.logout()
+                .and()
+                .logout()
                 .logoutUrl("/logout")
                 .logoutSuccessUrl("/")
                 .clearAuthentication(true)
-                .invalidateHttpSession(true);
+                .invalidateHttpSession(true)
+
+                .and()
+                .exceptionHandling()
+                .accessDeniedPage("/login");
+
+//                .and()
+//                .authorizeRequests()
+//                .antMatchers("/","/login")
+//                .authenticated()
+//
+//                .anyRequest()
+//                .permitAll();
 
         http.authorizeRequests()
-                .antMatchers("/admin/**").hasAnyAuthority("ADMIN")
-                .and().authorizeRequests()
-                .antMatchers("/profile/**",
-                        "/course/**/content/**",
-                        "/course/create/**","/course/**/edit/**","/course/uploadImage/**")
-                .authenticated()
-                .and().exceptionHandling().accessDeniedPage("/login")
-                .and().authorizeRequests().anyRequest()
+                .antMatchers("/","/profile")
+                .authenticated();
+
+        http.authorizeRequests()
+                .anyRequest()
                 .permitAll();
 
-        http.csrf().ignoringAntMatchers("/admin/**");
-        http.csrf().ignoringAntMatchers("/files/courses").ignoringAntMatchers("/rollIn");
-        http.headers().frameOptions().sameOrigin();
 
-
-        http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
+        http.csrf().disable();
 
     }
 

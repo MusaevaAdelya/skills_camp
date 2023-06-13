@@ -1,16 +1,17 @@
-package edu.inai.coursework3.dto;
+package com.example.skills_camp.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@FieldDefaults(level= AccessLevel.PRIVATE)
 public class RegisterForm {
-    private String username;
-    private String email;
-    private String password;
+    String firstName;
+    String lastName;
+    String email;
+    String password;
+
 }

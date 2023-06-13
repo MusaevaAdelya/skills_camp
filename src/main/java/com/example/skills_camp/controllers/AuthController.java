@@ -1,7 +1,7 @@
-package edu.inai.coursework3.controllers;
+package com.example.skills_camp.controllers;
 
-import edu.inai.coursework3.dto.RegisterForm;
-import edu.inai.coursework3.services.UserService;
+import com.example.skills_camp.dto.RegisterForm;
+import com.example.skills_camp.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,17 +17,16 @@ public class AuthController {
 
     @GetMapping("/login")
     public String login(Model model,
-                        @RequestParam(required = false, defaultValue = "false") Boolean error,
-                        @RequestParam(required = false, defaultValue = "false") Boolean register){
+                        @RequestParam(required = false, defaultValue = "false") Boolean error){
         model.addAttribute("error",error);
-        model.addAttribute("register",register);
 
-        return "login";
+        return "login_new";
     }
 
     @PostMapping("/register")
     public String register(@ModelAttribute RegisterForm registerForm){
         userService.register(registerForm);
-        return "redirect:/";
+        return "redirect:/login";
     }
+
 }

@@ -26,7 +26,7 @@
                 Logo
             </a>
             <button class="nav-close">
-                <img src="img/x.svg" alt="">
+                <img src="/img/x.svg" alt="">
             </button>
         </div>
         <ul class="navbar-nav">
@@ -56,6 +56,14 @@
             <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
             <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#registerModal">Регистрация</button>
 		</span>
+        <span class="navbar-text">
+            <a class="btn btn-outline-primary" type="button" href="/profile" >Личный кабинет</a>
+            <form action="/logout" method="post" role="form">
+                <button class="btn text-black fs-5 p-0 px-3" type="submit" ><i class="bi bi-box-arrow-right"></i></button>
+            </form>
+
+		</span>
+
     </div>
 </nav>
 
@@ -100,23 +108,24 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="loginModalLabel">Вход в личный кабинет</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
             </div>
             <form>
-            <div class="modal-body">
-                <div class="mb-3">
-                    <label for="email-login" class="col-sm-2 col-form-label">Эл. почта</label>
-                    <input id="email-login" class="form-control" placeholder="example@mail.com" type="text" name="email">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="email-login" class="col-sm-2 col-form-label">Эл. почта</label>
+                        <input id="email-login" class="form-control" placeholder="example@mail.com" type="text" name="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pass-login" class="col-sm-2 col-form-label">Почта</label>
+                        <input id="pass-login" class="form-control" placeholder="Пароль" type="password" name="password">
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="pass-login" class="col-sm-2 col-form-label">Почта</label>
-                    <input id="pass-login" class="form-control" placeholder="Пароль" type="password" name="password">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="submit" class="btn btn-primary" name="login" value="Login">Войти</button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                <button type="submit" class="btn btn-primary" name="login" value="Login">Войти</button>
-            </div>
             </form>
         </div>
     </div>
@@ -133,8 +142,8 @@
                 <div class="modal-body">
                     <div class="row mb-3">
                         <div class="col-6">
-                                <label for="name-register" class="col-sm-2 col-form-label">Имя</label>
-                                <input id="name-register" class="form-control" placeholder="Имя" type="text" name="name">
+                            <label for="name-register" class="col-sm-2 col-form-label">Имя</label>
+                            <input id="name-register" class="form-control" placeholder="Имя" type="text" name="name">
                         </div>
                         <div class="col-6">
                             <label for="lastname-register" class="col-sm-2 col-form-label">Фамилия</label>
@@ -162,13 +171,5 @@
 <script src="/vendor/jquery-3.7.0.min.js"></script>
 <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="/js/script.js"></script>
-<script !src="">
-    const carouselElement = document.querySelector('#carousel')
-    const carousel = new bootstrap.Carousel(carouselElement, {
-        interval: 5000,
-        wrap: true,
-        touch: true
-    })
-</script>
 </body>
 </html>

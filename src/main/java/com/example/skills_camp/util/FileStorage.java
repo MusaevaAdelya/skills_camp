@@ -1,4 +1,4 @@
-package edu.inai.coursework3.util;
+package com.example.skills_camp.util;
 
 import java.io.IOException;
 import java.io.InputStream;

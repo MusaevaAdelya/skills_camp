@@ -1,7 +1,6 @@
-package edu.inai.coursework3.util;
+package com.example.skills_camp.util;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -30,7 +29,7 @@ public class FileStorageImpl implements FileStorage {
             }
         }
 
-        return key;
+        return String.format("%s/%s",basePath,key);
     }
 
     public String save(InputStream inputStream, String fileOriginalName, String path) throws IOException {
