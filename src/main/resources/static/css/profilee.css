@@ -201,3 +201,13 @@ select.filter-month {
 .telegram-link {
     background: #0a53be;
 }
+h2.heading {
+
+    font-family: 'Unbounded';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 50px;
+
+    color: #8F2247;
+}

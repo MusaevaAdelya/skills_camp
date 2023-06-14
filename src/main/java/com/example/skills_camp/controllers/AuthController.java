@@ -43,9 +43,9 @@ public class AuthController {
 
         if(reCaptchaResponse.isSuccess()){
             userService.register(registerForm);
-            return "redirect:/login";
+            return "redirect:/";
         }else{
-            return "redirect:/login?invalidCaptcha=true";
+            return "redirect:/?invalidCaptcha=true";
         }
 
     }

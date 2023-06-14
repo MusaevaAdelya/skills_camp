@@ -29,11 +29,11 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/files/**").addResourceLocations("file:files/");
     }
 
-//    @Bean
-//    @ConditionalOnMissingBean(ClassPathTldsLoader.class)
-//    public ClassPathTldsLoader classPathTldsLoader(){
-//        return new ClassPathTldsLoader();
-//    }
+    @Bean
+    @ConditionalOnMissingBean(ClassPathTldsLoader.class)
+    public ClassPathTldsLoader classPathTldsLoader(){
+        return new ClassPathTldsLoader();
+    }
 
 
 }

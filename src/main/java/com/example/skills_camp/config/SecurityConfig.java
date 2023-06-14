@@ -44,7 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.formLogin()
                 .loginPage("/login")
-                .failureUrl("/login?error=true")
+                .failureUrl("/?error=true")
                 .defaultSuccessUrl("/")
 
                 .and()
@@ -67,7 +67,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .permitAll();
 
         http.authorizeRequests()
-                .antMatchers("/","/profile")
+                .antMatchers("/profile")
                 .authenticated();
 
         http.authorizeRequests()

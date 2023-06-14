@@ -1,3 +1,5 @@
+<#assign security=JspTaglibs["http://www.springframework.org/security/tags"]/>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -53,16 +55,23 @@
             </li>
         </ul>
         <span class="navbar-text">
-            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
-            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#registerModal">Регистрация</button>
+            <@security.authorize access="!isAuthenticated()">
+                <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#registerModal">Регистрация</button>
+            </@security.authorize>
+
 		</span>
-        <span class="navbar-text">
+        <@security.authorize access="isAuthenticated()">
+            <span class="navbar-text">
+
             <a class="btn btn-outline-primary" type="button" href="/profile" >Личный кабинет</a>
             <form action="/logout" method="post" role="form">
                 <button class="btn text-black fs-5 p-0 px-3" type="submit" ><i class="bi bi-box-arrow-right"></i></button>
             </form>
 
 		</span>
+        </@security.authorize>
+
 
     </div>
 </nav>
@@ -111,15 +120,15 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
             </div>
-            <form>
+            <form action="/login" method="post" role="form" >
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="email-login" class="col-sm-2 col-form-label">Эл. почта</label>
-                        <input id="email-login" class="form-control" placeholder="example@mail.com" type="text" name="email">
+                        <input name="username" id="email-login" class="form-control" placeholder="example@mail.com" type="text" name="email">
                     </div>
                     <div class="mb-3">
                         <label for="pass-login" class="col-sm-2 col-form-label">Почта</label>
-                        <input id="pass-login" class="form-control" placeholder="Пароль" type="password" name="password">
+                        <input name="password" id="pass-login" class="form-control" placeholder="Пароль" type="password" name="password">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -138,25 +147,25 @@
                 <h1 class="modal-title fs-5" id="registerModalLabel">Регистрация</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form>
+            <form action="/register" method="post"  role="form" modelAttribute="registerForm">
                 <div class="modal-body">
                     <div class="row mb-3">
                         <div class="col-6">
                             <label for="name-register" class="col-sm-2 col-form-label">Имя</label>
-                            <input id="name-register" class="form-control" placeholder="Имя" type="text" name="name">
+                            <input required name="firstName" id="name-register" class="form-control" placeholder="Имя" type="text" name="name">
                         </div>
                         <div class="col-6">
                             <label for="lastname-register" class="col-sm-2 col-form-label">Фамилия</label>
-                            <input id="lastname-register" class="form-control" placeholder="Фамилия" type="text" name="lastname">
+                            <input required name="lastName" id="lastname-register" class="form-control" placeholder="Фамилия" type="text" name="lastname">
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="email-register" class="col-sm-2 col-form-label">Эл. почта</label>
-                        <input id="email-register" class="form-control" placeholder="example@mail.com" type="text" name="email">
+                        <input required name="email" id="email-register" class="form-control" placeholder="example@mail.com" type="text" name="email">
                     </div>
                     <div class="mb-3">
                         <label for="pass-register" class="col-sm-2 col-form-label">Почта</label>
-                        <input id="pass-register" class="form-control" placeholder="Пароль" type="password" name="password">
+                        <input required minlength="3" name="password" id="pass-register" class="form-control" placeholder="Пароль" type="password" name="password">
                     </div>
                 </div>
                 <div class="modal-footer">
