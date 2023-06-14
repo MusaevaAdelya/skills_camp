@@ -2,15 +2,19 @@ package com.example.skills_camp.services;
 
 import com.example.skills_camp.config.SecurityConfig;
 import com.example.skills_camp.dto.ProfileEditForm;
+import com.example.skills_camp.dto.ReCaptchaResponse;
 import com.example.skills_camp.dto.RegisterForm;
 import com.example.skills_camp.dto.UserDto;
 import com.example.skills_camp.entities.User;
 import com.example.skills_camp.repositories.UserRepository;
+import com.example.skills_camp.util.CaptchaSettings;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -23,6 +27,8 @@ import javax.servlet.http.HttpServletRequest;
 public class UserService {
     final UserRepository userRepository;
     final ImageService imageService;
+    final CaptchaSettings captchaSettings;
+    final RestTemplate restTemplate;
 
     public void register(RegisterForm user) {
         HttpServletRequest request =
@@ -68,5 +74,13 @@ public class UserService {
                 .telegram(user.getTelegram())
                 .about(user.getAbout())
                 .build();
+    }
+
+    public ReCaptchaResponse processCaptchaResponse(String response){
+        String url=String.format("https://www.google.com/recaptcha/api/siteverify?secret=%s&response=%s",captchaSettings.getSecret(),response);
+
+        ReCaptchaResponse reCaptchaResponse=restTemplate.exchange(url, HttpMethod.POST,null,ReCaptchaResponse.class).getBody();
+
+        return reCaptchaResponse;
     }
 }

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="/vendor/bootstrap-icons-1.10.5/font/bootstrap-icons.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
@@ -39,25 +40,29 @@
             <h2>Создать аккаунт</h2>
             <div class="row w-100">
                 <div class="col-6">
-                    <input name="firstName" type="text" class="rounded" placeholder="Имя"/>
+                    <input required name="firstName" type="text" class="rounded" placeholder="Имя"/>
                     <div class="invalid-feedback">
                         Введите правильно
                     </div>
                 </div>
                 <div class="col-6">
-                    <input name="lastName" type="text" class="rounded" placeholder="Фамилия"/>
+                    <input required name="lastName" type="text" class="rounded" placeholder="Фамилия"/>
                 </div>
             </div>
             <div class="row w-100 mb-3">
                 <div class="col-12">
-                    <input name="email" type="email" class="rounded" placeholder="Эл. почта"/>
+                    <input required name="email" type="email" class="rounded" placeholder="Эл. почта"/>
                 </div>
                 <div class="col-12">
-                    <input name="password" type="password" class="rounded" placeholder="Пароль"/>
+                    <input required minlength="3" name="password" type="password" class="rounded" placeholder="Пароль"/>
+                </div>
+                <div class="col-12">
+                    <div class="g-recaptcha" data-sitekey="${captchaSettings.site}"></div>
                 </div>
             </div>
+
             <button class="w-100 mb-3" type="submit">Зарегистрироваться</button>
-<#--            <button class="w-100" id="signIn2" >Войти</button>-->
+            <button class="w-100" id="signIn2" type="button" >Войти</button>
         </form>
     </div>
     <div class="form-container sign-in-container col-12 col-md-6 ">
@@ -67,7 +72,7 @@
             <input name="password" type="password" class="rounded" placeholder="Пароль"/>
             <a href="#">Забыли пароль?</a>
             <button class="w-100 mb-3" type="submit">Войти</button>
-<#--            <button class="w-100" id="signUp2">Зарегистрироваться</button>-->
+            <button class="w-100" id="signUp2" type="button">Зарегистрироваться</button>
 
         </form>
     </div>
@@ -116,7 +121,10 @@
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample, { delay: 5000 })
 
     <#if error??>
+    <#if error>
     toastBootstrap.show()
+    </#if>
+
     </#if>
 
 </script>
