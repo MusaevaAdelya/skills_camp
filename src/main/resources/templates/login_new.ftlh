@@ -26,7 +26,16 @@
          aria-atomic="true">
         <div class="d-flex">
             <div class="toast-body">
-                Неправильно введен пароль или почта.
+                <#if error??>
+                    <#if error>
+                        Неправильно введен пароль или почта.
+                    </#if>
+                </#if>
+                <#if invalidCaptcha??>
+                    <#if invalidCaptcha>
+                        Invalid Captcha
+                    </#if>
+                </#if>
             </div>
             <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
                     aria-label="Close"></button>
@@ -124,7 +133,12 @@
     <#if error>
     toastBootstrap.show()
     </#if>
+    </#if>
 
+    <#if invalidCaptcha??>
+        <#if invalidCaptcha>
+            toastBootstrap.show()
+        </#if>
     </#if>
 
 </script>
