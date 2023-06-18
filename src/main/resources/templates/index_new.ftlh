@@ -44,19 +44,23 @@
 </div>
 <nav class="navbar navbar-expand-lg shadow bg-white d-block d-lg-none d-flex align-items-center mobile-nav p-3 fixed-top z-indextop">
 
-    <a class="navbar-brand" href="#"><img src="/img/logo.png" width="90" alt=""></a>
+    <a class="navbar-brand" href="#"><img src="/img/logo1.png" width="90" alt=""></a>
     <div class="nav-slider py-4 d-flex flex-column justify-content-between">
         <div class="d-flex justify-content-between  align-items-center">
-            <a class="navbar-brand" href="#">
-                Logo
-            </a>
+            <a class="navbar-brand" href="#"><img src="/img/logo1.png" width="90" alt=""></a>
             <button class="nav-close">
                 <img src="/img/x.svg" alt="">
             </button>
         </div>
         <ul class="navbar-nav">
-            <li class="nav-item mb-3">
-                <a class="nav-link active px-0 py-1 " href="#">Главная</a>
+            <li class="nav-item">
+                <a class="nav-link" href="#predstavlenie">ПРЕДСТАВЛЕНИЕ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#components">КОМПОНЕНТЫ ДРОНА</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#techno">ТЕХНОЛОГИИ ДРОНОВ</a>
             </li>
         </ul>
         <@security.authorize access="!isAuthenticated()">
@@ -83,10 +87,10 @@
                 <a class="nav-link" href="#predstavlenie">Представление</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#predstavlenie">Компоненты дрона</a>
+                <a class="nav-link" href="#components">Компоненты дрона</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#predstavlenie">ТЕХНОЛОГИИ ДРОНОВ</a>
+                <a class="nav-link" href="#techno">ТЕХНОЛОГИИ ДРОНОВ</a>
             </li>
         </ul>
         <@security.authorize access="!isAuthenticated()">
@@ -114,11 +118,13 @@
     <div id="carousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="/img/slider_img.png" class="d-block w-100" alt="...">
-                <div class="carousel-caption">
-                    <h2>Мы лучшая<br>
-                        компания</h2>
-                </div>
+                <img src="/img/slider11.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item active">
+                <img src="/img/slider21.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item active">
+                <img src="/img/slider31.png" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
@@ -158,7 +164,7 @@
     <div id="components" class="container-fluid py-5 bg-gray-my">
         <div class="container">
             <h2 class="my-3 heading text-center mb-5">Компоненты дрона</h2>
-            <div class="row">
+            <div class="row d-none d-lg-block">
                 <svg width="1233" height="604" viewBox="0 0 1233 604" fill="none" xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink">
                     <path d="M17.06 32.68H19.7V38.08H17.24V35H2.74V38.08H0.28V32.68H2.14C2.72 32.02 3.15 31.0733 3.43 29.84C3.71667 28.6 3.86 27.0467 3.86 25.18C3.86 23.78 3.76667 22.0533 3.58 20H17.06V32.68ZM14.42 32.72V22.32H6.2C6.28 23.5 6.32 24.6267 6.32 25.7C6.32 27.3733 6.19667 28.8067 5.95 30C5.71 31.1933 5.36 32.1 4.9 32.72H14.42ZM31.0853 29.09C31.952 29.2633 32.6086 29.5867 33.0553 30.06C33.5086 30.5333 33.7353 31.14 33.7353 31.88C33.7353 32.52 33.5753 33.0767 33.2553 33.55C32.942 34.0167 32.4886 34.3767 31.8953 34.63C31.302 34.8767 30.5953 35 29.7753 35H21.3153L21.8953 29.34L21.3153 23.68H29.5153C30.2353 23.68 30.8586 23.7967 31.3853 24.03C31.912 24.2567 32.3153 24.5867 32.5953 25.02C32.8753 25.4467 33.0153 25.9533 33.0153 26.54C33.0153 27.14 32.8486 27.6567 32.5153 28.09C32.182 28.5233 31.7053 28.8567 31.0853 29.09ZM30.3953 26.94C30.3953 26.4867 30.252 26.13 29.9653 25.87C29.6786 25.61 29.2286 25.48 28.6153 25.48H23.9653L24.2953 28.42H28.4353C29.0953 28.42 29.5853 28.29 29.9053 28.03C30.232 27.7633 30.3953 27.4 30.3953 26.94ZM29.1153 33.2C29.8086 33.2 30.3153 33.07 30.6353 32.81C30.9553 32.5433 31.1153 32.1533 31.1153 31.64C31.1153 31.1733 30.9253 30.8 30.5453 30.52C30.172 30.24 29.5953 30.1 28.8153 30.1H24.3153L23.9653 33.2H29.1153ZM38.3931 32.53L45.3531 23.68H48.7131V35H46.1531V26.06L39.1131 35H35.8331V23.68H38.3931V32.53ZM51.4777 23.68H60.4177V25.72H54.0777V35H51.4777V23.68ZM74.8348 23.68L74.2348 29.34L74.8348 35H72.1548L71.8648 32.19C71.2782 33.1633 70.5348 33.9233 69.6348 34.47C68.7348 35.01 67.7415 35.28 66.6548 35.28C65.5615 35.28 64.5848 35.0333 63.7248 34.54C62.8648 34.04 62.1948 33.34 61.7148 32.44C61.2348 31.54 60.9948 30.5067 60.9948 29.34C60.9948 28.1733 61.2348 27.14 61.7148 26.24C62.1948 25.34 62.8648 24.6433 63.7248 24.15C64.5848 23.65 65.5615 23.4 66.6548 23.4C67.7482 23.4 68.7415 23.67 69.6348 24.21C70.5348 24.75 71.2782 25.5067 71.8648 26.48L72.1548 23.68H74.8348ZM67.2748 33.2C67.9748 33.2 68.6315 33.04 69.2448 32.72C69.8648 32.3933 70.4115 31.94 70.8848 31.36C71.3648 30.78 71.7482 30.1067 72.0348 29.34C71.7482 28.58 71.3648 27.91 70.8848 27.33C70.4115 26.75 69.8648 26.2967 69.2448 25.97C68.6315 25.6433 67.9748 25.48 67.2748 25.48C66.5748 25.48 65.9482 25.6467 65.3948 25.98C64.8415 26.3067 64.4082 26.7633 64.0948 27.35C63.7882 27.93 63.6348 28.5933 63.6348 29.34C63.6348 30.0867 63.7882 30.7533 64.0948 31.34C64.4082 31.9267 64.8415 32.3833 65.3948 32.71C65.9482 33.0367 66.5748 33.2 67.2748 33.2ZM76.217 23.68H88.217V25.72H83.517V35H80.917V25.72H76.217V23.68ZM91.4883 30.26C91.7149 31.2 92.2249 31.9333 93.0183 32.46C93.8183 32.98 94.8283 33.24 96.0483 33.24C96.9216 33.24 97.8083 33.1033 98.7083 32.83C99.6149 32.55 100.415 32.1667 101.108 31.68V33.56C100.408 34.0933 99.5616 34.5133 98.5683 34.82C97.5816 35.1267 96.5749 35.28 95.5483 35.28C94.2349 35.28 93.0583 35.03 92.0183 34.53C90.9849 34.03 90.1783 33.33 89.5983 32.43C89.0183 31.5233 88.7283 30.4867 88.7283 29.32C88.7283 28.16 89.0049 27.1333 89.5583 26.24C90.1116 25.34 90.8816 24.6433 91.8683 24.15C92.8549 23.65 93.9749 23.4 95.2283 23.4C96.4749 23.4 97.5649 23.6833 98.4983 24.25C99.4383 24.8167 100.162 25.62 100.668 26.66C101.175 27.6933 101.428 28.8933 101.428 30.26H91.4883ZM95.1683 25.44C94.5149 25.44 93.9283 25.5567 93.4083 25.79C92.8949 26.0167 92.4683 26.3433 92.1283 26.77C91.7883 27.1967 91.5616 27.7 91.4483 28.28H98.7283C98.5416 27.38 98.1349 26.6833 97.5083 26.19C96.8883 25.69 96.1083 25.44 95.1683 25.44ZM116.492 23.68V35H113.892V25.68H107.842C107.956 27.1533 108.012 28.2933 108.012 29.1C108.012 30.5333 107.879 31.7 107.612 32.6C107.352 33.4933 106.942 34.1533 106.382 34.58C105.829 35.0067 105.106 35.22 104.212 35.22C103.486 35.22 102.819 35.0533 102.212 34.72V32.78C102.692 32.98 103.146 33.08 103.572 33.08C104.066 33.08 104.462 32.9333 104.762 32.64C105.069 32.34 105.292 31.8733 105.432 31.24C105.579 30.6067 105.652 29.7733 105.652 28.74C105.652 27.3667 105.552 25.68 105.352 23.68H116.492ZM121.811 32.53L128.771 23.68H132.131V35H129.571V26.06L122.531 35H119.251V23.68H121.811V32.53Z"
@@ -382,19 +388,52 @@
                     </defs>
                 </svg>
             </div>
+            <div class="row d-block d-lg-none">
+                <img src="/img/drone31.png" alt="">
+                <div class="col-12 col-md-4 mb-5">
+                    <h2 class="h2comp">1. Двигатели</h2>
+                    <p>Дроны приводятся в движение электродвигателями, которые обеспечивают необходимую тягу для поддержания дрона в воздухе. В большинстве дронов используются бесщеточные двигатели постоянного тока, которые более эффективны и надежны, чем их щеточные аналоги.</p>
+                </div>
+                <div class="col-12 col-md-4 mb-5">
+                    <h2 class="h2comp">2. Рама</h2>
+                    <p>Рама дрона обычно изготавливается из легких и прочных материалов, таких как углеродное волокно или алюминий. Она обеспечивает структуру, к которой крепятся другие компоненты.</p>
+                </div>
+                <div class="col-12 col-md-4 mb-5">
+                    <h2 class="h2comp">3. Полетный
+                        контроллер</h2>
+                    <p>Полетный контроллер - это мозг дрона. Он получает данные от различных датчиков и управляет двигателями и пропеллерами дрона для поддержания стабильного полета.</p>
+                </div>
+                <div class="col-12 col-md-4 mb-5">
+                    <h2 class="h2comp">4. Камера</h2>
+                    <p>Многие дроны оснащены высококачественными камерами, которые могут снимать изображения и видео с уникальных ракурсов.</p>
+                </div>
+                <div class="col-12 col-md-4 mb-5">
+                    <h2 class="h2comp">5. Аккумулятор</h2>
+                    <p>Дроны питаются от перезаряжаемых литий-ионных батарей, которые обеспечивают необходимую энергию для питания двигателей и других электронных компонентов.</p>
+                </div>
+                <div class="col-12 col-md-4 mb-5">
+                    <h2 class="h2comp">6. Датчики</h2>
+                    <p>Дроны оснащены различными датчиками, такими как GPS, акселерометры и гироскопы, которые предоставляют информацию о положении, ориентации и скорости дрона.</p>
+                </div>
+                <div class="col-12 col-md-4 mb-5">
+                    <h2 class="h2comp">7. Пропеллеры</h2>
+                    <p>Пропеллеры прикреплены к двигателям и обеспечивают необходимую подъемную силу для удержания дрона в воздухе. Они обычно изготавливаются из пластика или углеродного волокна и бывают разных размеров в зависимости от размера и веса дрона.</p>
+                </div>
+
+            </div>
         </div>
     </div>
 
-    <div id="techno" class="container-fluid py-5 pe-5  bg-gradient-line-start">
+    <div id="techno" class="container-fluid py-5 pe-0 pe-md-5  bg-gradient-line-start">
 
         <h2 class="my-3 heading text-center mb-5">Технологии дронов</h2>
         <div class="row">
             <div class="col ps-0 d-flex justify-content-start">
-                <img src="/img/drone21.png" alt="" >
+                <img class="object-fit-contain" src="/img/drone21.png" alt="">
             </div>
             <div class="col-12 col-md-6">
-                <div class="row container-cards mb-4 d-flex align-content-stretch">
-                    <div class="col-sm">
+                <div class="row container-cards d-flex align-content-stretch">
+                    <div class="col-sm mb-4">
                         <div class="card card-body">
                             <div class="icon text-center my-3">
                                 <img src="/img/location1.svg" alt="">
@@ -409,7 +448,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-sm">
+                    <div class="col-sm mb-4">
                         <div class="card card-body">
                             <div class="icon text-center my-3">
                                 <img src="/img/Union1.svg" alt="">
@@ -426,7 +465,7 @@
                     </div>
                 </div>
                 <div class="row container-cards d-flex align-content-stretch">
-                    <div class="col-sm">
+                    <div class="col-sm mb-4">
                         <div class="card card-body">
                             <div class="icon text-center my-3">
                                 <img src="/img/Send1.svg" alt="">
@@ -441,7 +480,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-sm">
+                    <div class="col-sm mb-4">
                         <div class="card card-body">
                             <div class="icon text-center my-3">
                                 <img src="/img/globe1.svg" alt="">

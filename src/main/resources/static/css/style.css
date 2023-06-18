@@ -618,13 +618,12 @@ body.modal-open > :not(.modal) {
 }
 
 h2.heading {
-
+    mix-blend-mode: multiply;
     font-family: 'Unbounded';
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
     line-height: 50px;
-
     color: #8F2247;
 }
 .main-list {
@@ -818,4 +817,17 @@ body.modal-open > :not(.modal) {
     transform: translateY(-50%);
     font-size: 20px;
     cursor:pointer;
+}
+.carousel-item {
+    position: relative;
+}
+.slide-img-2 {
+    position: absolute;
+}
+.h2comp {
+    font-family: 'Unbounded';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    color: #8F2247;
 }
