@@ -1,0 +1,213 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+.signin-main {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(213deg, #ff2bb3 59.8%, #ff00c6 59.9%);
+}
+
+.mb-29 {
+    margin-bottom: 1.5rem !important;
+}
+
+.login-block {
+    background-color: #fff;
+    border-radius: 10px;
+}
+.login-form {
+    box-shadow: 0px 15px 37px 0px rgba(0, 0, 0, 0.16);
+
+    padding: 2rem 1.5rem;
+}
+.login-form label {
+    color: #444150;
+    font-style: normal;
+    font-weight: 700;
+    opacity: 1;
+    font-size: 14px !important;
+    line-height: 14px;
+}
+.login-form .btn {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25px;
+    text-align: center;
+    font-size: 14px;
+
+    /* #FFFFFF */
+
+    color: #FFFFFF;
+    background: #800c88;
+    border-radius: 7px;
+}
+
+.login-form input {
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 6px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
+.login-form input::placeholder {
+    color: #444150;
+    opacity: 0.5;
+}
+
+.body-upanel {
+    background: linear-gradient(230deg, rgba(185, 64, 174, 0.4) 0%, rgba(192, 56, 186, 0.4) 100%);
+}
+.welcome-text {
+    color: rgba(113, 123, 140, 1);
+}
+.nav-name {
+    color: rgb(190, 0, 196);
+}
+.navbar {
+    height: 5rem;
+    box-shadow: 0px 10px 20px 0px rgba(194, 194, 194, 0.16);
+}
+.min-h-100-minus-header {
+    min-height: calc(100vh - 8rem);
+}
+.panel-block {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px 0px rgba(194, 194, 194, 0.16);
+}
+.shadow-top {
+    box-shadow: 0px -10px 20px 0px rgba(194, 194, 194, 0.26);
+}
+
+.upanel-nav .nav-link {
+    align-items: center;
+}
+.upanel-nav .nav-link span {
+    color: rgba(76, 83, 95, 1);
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+.upanel-nav .nav-link i {
+    color: rgba(76, 83, 95, 1);
+    font-size: 1.375rem;
+    margin-right: 1rem;
+    font-weight: 800;
+}
+.upanel-nav .nav-link *{
+    transition: 0.2s ease-in-out;
+}
+.upanel-nav .nav-link.active * {
+    color: black;
+}
+.upanel-nav .nav-link:hover * {
+    color: black;
+}
+.upanel-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 44px;
+    color: #000000;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.hr-upanel {
+    border: 2px solid #e513d4;
+    opacity: 1;
+    border-radius: 2px;
+    width: 8rem;
+}
+.row-info :first-child {
+    margin-right: 2rem;
+}
+
+.row-info label {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 19px;
+    color: #3A3A3A;
+}
+
+.row-info h4 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 33px;
+    color: #000000;
+}
+.upanel-content-block .table td {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 19px;
+    color: #7D8398 !important;
+}
+.table {
+    --bs-table-striped-bg: #FCFCFC;
+}
+
+
+.upanel-content-block .table th {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #121212;
+}
+.upanel-content-block .table h5 {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 19px;
+
+    color: #121212;
+}
+
+label.filter-month {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #444150;
+}
+
+select.filter-month {
+    border: 1px solid #FF6B35;
+    border-radius: 6px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+}
+.profile-img {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+}
+
+.telegram-link a {
+    color: #fff !important;
+}
+.telegram-link {
+    background: #0a53be;
+}
+h2.heading {
+
+    font-family: 'Unbounded';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 50px;
+
+    color: #8F2247;
+}
